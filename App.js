@@ -2,10 +2,16 @@ import React from 'react'
 import { 
   SafeAreaView,
   Text,
-  StyleSheet
+  StyleSheet,
+  Pressable
    } from 'react-native'
 
 const App = () => {
+
+  const nuevaCitaHandler = () =>{
+    console.log('Presionaste el Botón')
+  }
+
   return ( 
   <SafeAreaView style={styles.container}> 
     <Text style={styles.titulo}>
@@ -14,6 +20,13 @@ const App = () => {
         Soluciones David
       </Text>
     </Text>
+    <Pressable style = {styles.btnNuevaCita}
+      onPressOut={ nuevaCitaHandler }  
+    >
+      <Text style = {styles.btnTextoNuevaCita}>
+        Nueva Cita
+      </Text>
+    </Pressable>
   </SafeAreaView>
   );
 };
@@ -33,6 +46,21 @@ const styles = StyleSheet.create({
   tituloBold: {
     fontWeight: '800',
     color: '#6D28D9'
+  },
+  btnNuevaCita:{
+    backgroundColor: '#6D28D9',
+    padding: 15,
+    marginTop: 30,
+    marginLeft: 20,
+    marginHorizontal: 20, 
+    borderRadius: 10
+  },
+  btnTextoNuevaCita: {
+    textAlign: 'center',
+    color: '#FFF',
+    fontSize: 18,
+    fontWeight: '900',
+    textTransform: 'uppercase'
   }
 })
 

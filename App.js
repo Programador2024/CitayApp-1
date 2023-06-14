@@ -7,6 +7,9 @@ import {
   Modal
    } from 'react-native'
 
+import Formulario from './src/components/Formulario';
+
+
 const App = () => {
 
 // Los hooks se colocan en la parte superior de los componentes
@@ -35,12 +38,11 @@ const App = () => {
         Nueva Cita
       </Text>
     </Pressable>
-    <Modal 
-      animationType='slide' 
-      visible={modalVisible}
-    >
-        <Text> Desde Modal</Text>
-    </Modal>
+
+    <Formulario
+      modalVisible = {modalVisible}
+    />
+
   </SafeAreaView>
   );
 };

@@ -3,7 +3,8 @@ import {
   SafeAreaView,
   Text,
   StyleSheet,
-  Pressable
+  Pressable,
+  Modal
    } from 'react-native'
 
 const App = () => {
@@ -27,6 +28,12 @@ const App = () => {
         Nueva Cita
       </Text>
     </Pressable>
+    <Modal 
+      animationType='slide' 
+      visible={true}
+    >
+        <Text> Desde Modal</Text>
+    </Modal>
   </SafeAreaView>
   );
 };

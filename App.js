@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { 
   SafeAreaView,
   Text,
@@ -8,6 +8,11 @@ import {
    } from 'react-native'
 
 const App = () => {
+
+// Los hooks se colocan en la parte superior de los componentes
+  
+  const [modalVisible, setModalVisible] = useState(false)
+
 
   const nuevaCitaHandler = () =>{
     console.log('Presionaste el Botón')
@@ -21,16 +26,18 @@ const App = () => {
         Soluciones David
       </Text>
     </Text>
-    <Pressable style = {styles.btnNuevaCita}
-      onPressOut={ nuevaCitaHandler }  
+    <Pressable 
+      style = {styles.btnNuevaCita}
+      onPress={() => setModalVisible(true)} 
     >
-      <Text style = {styles.btnTextoNuevaCita}>
+      <Text 
+        style = {styles.btnTextoNuevaCita}>
         Nueva Cita
       </Text>
     </Pressable>
     <Modal 
       animationType='slide' 
-      visible={true}
+      visible={modalVisible}
     >
         <Text> Desde Modal</Text>
     </Modal>

@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     fontWeight: '600'
   },
   tituloBold: {
-    fontWeight: '900',
+    fontWeight: '800',
     color: '#6D28D9'
   }
 })

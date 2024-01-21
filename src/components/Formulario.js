@@ -4,7 +4,9 @@ import {
   Text,
   StyleSheet,
   SafeAreaView,
-  Pressable, 
+  ScrollView, 
+  TextInput,
+  View,
     } from 'react-native'
 
 const Formulario = (props) => {
@@ -14,12 +16,45 @@ const Formulario = (props) => {
         visible={props.modalVisible}
     >
       <SafeAreaView style={styles.container}>
-        <Text style = {styles.titulo}>
-          Nueva {' '}
-          <Text style = {styles.tituloBold}>
-             Cita
+        <ScrollView>
+          <Text style = {styles.titulo}>
+            Nueva {' '}
+            <Text style = {styles.tituloBold}>
+              Cita
+            </Text>
           </Text>
-        </Text>
+
+          <View style = {styles.campo}>
+            <Text style = {styles.label}>Nombre de Cliente</Text>  
+            <TextInput 
+              style = {styles.input}
+              placeholder='Nombre de Cliente'
+              placeholderTextColor={'#666'} 
+              />
+          </View>
+
+          <View style = {styles.campo}>
+            <Text style = {styles.label}>Número de Teléfono</Text>  
+            <TextInput 
+              style = {styles.input}
+              placeholder='ej. 4451129334'
+              placeholderTextColor={'#666'} 
+              keyboardType='number-pad'
+              />
+          </View>
+
+          <View style = {styles.campo}>
+            <Text style = {styles.label}>Correo electrónico</Text>  
+            <TextInput 
+              style = {styles.input}
+              placeholder='ej. correo@gmail.com'
+              placeholderTextColor={'#666'} 
+              keyboardType='email-address'
+              />
+          </View>
+        </ScrollView>
+        
+
       </SafeAreaView>
     </Modal>
   )
@@ -39,6 +74,22 @@ const styles = StyleSheet.create({
   },
   tituloBold: {
     fontWeight: '900'
+  },
+  campo:{
+    marginTop: 10,
+    marginHorizontal: 30,
+  },
+  label: {
+    color: '#FFF',
+    marginBottom: 10,
+    marginTop: 15,
+    fontSize: 20,
+    fontWeight: '600',
+  },
+  input: {
+    backgroundColor: '#FFF',
+    padding: 15,
+    borderRadius: 10,
   }
 })
 

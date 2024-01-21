@@ -4,7 +4,6 @@ import {
   Text,
   StyleSheet,
   Pressable,
-  Modal
    } from 'react-native'
 
 import Formulario from './src/components/Formulario';
@@ -15,11 +14,6 @@ const App = () => {
 // Los hooks se colocan en la parte superior de los componentes
   
   const [modalVisible, setModalVisible] = useState(false)
-
-
-  const nuevaCitaHandler = () =>{
-    console.log('Presionaste el Botón')
-  }
 
   return ( 
   <SafeAreaView style={styles.container}> 

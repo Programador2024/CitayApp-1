@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { 
   Modal, 
   Text,
@@ -8,8 +8,10 @@ import {
   TextInput,
   View,
     } from 'react-native'
+import DatePicker from '@dietime/react-native-date-picker'
 
 const Formulario = (props) => {
+  const [date, setDate] = useState();
   return (
     <Modal 
         animationType='slide' 
@@ -52,6 +54,14 @@ const Formulario = (props) => {
               keyboardType='email-address'
               />
           </View>
+          <View>
+            <Text>{date ? date.toDateString() : "Select date..."}</Text>
+            <DatePicker
+                value={date}
+                onChange={(value) => setDate(value)}
+                format="yyyy-mm-dd"
+            />
+        </View>
         </ScrollView>
         
 
